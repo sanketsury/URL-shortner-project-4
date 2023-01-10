@@ -5,7 +5,7 @@ const { promisify } = require('util')
 const url = require('validator')
 
 
-// ---------------- VALIDATIONS -------------
+// ---------------- VALIDATIONS -----------
 const isValid = function (value) {
     if (typeof value === 'undefined' || value === null) return false
     if (typeof value === 'string' && value.trim().length === 0) return false
@@ -74,7 +74,7 @@ const createUrl = async function (req, res) {
 
         data.urlCode = urlCode
         data.shortUrl = shortUrl
-
+  
         // ----------- Creating data
         const savedData = await urlModel.create(data)
         const resData = ({ longUrl: savedData.longUrl, shortUrl: savedData.shortUrl, urlCode: savedData.urlCode })
@@ -86,7 +86,7 @@ const createUrl = async function (req, res) {
     }
 }
 
-// ==========================================GET URL =================================================
+// ==========================================GET URL=================================================
 
 const getUrl = async function (req, res) {
     try {
